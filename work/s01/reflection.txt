@@ -1,0 +1,12 @@
+I have worked with Github before during other projects and courses but i have not used Markdown
+or Github pages before. Github pages seems like a very good tool to use when developing webpages so Im
+interested in learning more. I still don't know what markdown is but i want to learn.
+
+I have never created websites before, in last project course some people did but i ended up creating an
+android application instead.
+
+I have basically no experience in developing webpages, but i have used a application called m1mo on iPhone
+that learn you the basics of HTML.
+
+TIL for the section is further understanding of using Github and some basic HTML and understanding in
+building webpages. Github pages was a new one as well for me so good to learn that.
