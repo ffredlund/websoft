@@ -1,5 +1,5 @@
 /*
- * Comments are written as C++ style. 
+ * Comments are written as C++ style.
  */
 html {
     overflow-y: scroll;
@@ -9,4 +9,51 @@ body {
     margin: 8px auto;
     background: #fff;
     width: 700px;
+}
+
+/*.site-header {
+  width: 100%;
+  background-color: yellow;
+}
+
+.site-footer {
+  width: 100%;
+  background-color: lime;
+}
+
+.main {
+  background-color: blue;
+}
+
+article {
+  background-color: pink;
+  max-width: 700px;
+  min-height: 20em;
+} */
+
+nav {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+
+ul {
+  text-align: center;
+
+}
+.float-right {
+  float: right;
+}
+
+h1 {
+  text-align: center;
+}
+
+.site-footer {
+  width: auto;
+  background-color: black;
+}
+.right {
+  float: right;
 }
