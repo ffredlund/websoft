@@ -11,6 +11,17 @@ body {
     width: 700px;
 }
 
+.duck {
+  width: 128px;
+  height: 128px;
+  border: 1px solid black;
+  background-image: url(../img/duck.jpg);
+  background-size: 128px;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+}
+
 /*.site-header {
   width: 100%;
   background-color: yellow;
