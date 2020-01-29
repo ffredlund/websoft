@@ -42,7 +42,7 @@ function runFetch () {
             }
         }
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("placeHolder");
+        var divContainer = document.getElementById("placeholder");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
 
