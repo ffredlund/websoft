@@ -3,15 +3,26 @@
 
 (function () {
 
-  var element = document.getElementById("duck");
+  var button = document.getElementById("button");
+  var duck = document.getElementById("duck");
+  duck.style.display = 'none';
+  duck.style.position = 'absolute';
+  duck.style.top = Math.floor(Math.random()*90+5)+'%';
+  duck.style.left = Math.floor(Math.random()*90+5)+'%';
 
-    element.addEventListener("click", function() {
-      console.log("clicked");
-    });
 
-    element.addEventListener("mouseover", function(){
-      element.style.left = element.offsetLeft + 20 + "px";
-    console.log("mouseover");
+  button.addEventListener("click", function() {
+    if (duck.style.display == 'none') {
+      duck.style.display = 'block';
+    } else {
+      duck.style.display = 'none';
+    }
   });
+
+    duck.addEventListener("click", function() {
+        duck.style.position = 'absolute';
+        duck.style.top = Math.floor(Math.random()*90+5)+'%';
+        duck.style.left = Math.floor(Math.random()*90+5)+'%';
+    });
 
 })();
