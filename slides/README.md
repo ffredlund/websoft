@@ -21,6 +21,7 @@ Here are the slideshows.
 * [Course introduction](s00-01-course_introduction)
 * [S01: Web Application Development](s01-01-web_application_development)
 * [S02: HTML, CSS, JavaScript](s02-01-HTML-CSS-JavaScript)
+<<<<<<< HEAD
 * [S03: JavaScript Core](s03-01-JavaScript-core)
 
 <!--
@@ -33,6 +34,11 @@ Here are the slideshows.
 * [S03: JavaScript and Document Object Model (DOM)](s03-01-JavaScript_and_DOM)
 * [S03: JavaScript and Fetch (AJAX)](s03-02-JavaScript_and_Fetch)
 -->
+=======
+* [S03: JavaScript Core](s03-01-JavaScript_core)
+* [S04: Node.js](s04-01-Nodejs)
+
+>>>>>>> 72c2be7414dc34405e643b310142186af502189f
 
 
 ```
