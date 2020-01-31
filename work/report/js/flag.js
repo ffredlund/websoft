@@ -14,6 +14,8 @@ ukrain.style.display = 'none';
 
 Frankrike.addEventListener("click", function() {
   if (france.style.display == 'none') {
+    italy.style.display = 'none';
+    ukrain.style.display = 'none';
     france.style.display = 'block';
   } else {
     france.style.display = 'none';
@@ -22,6 +24,8 @@ Frankrike.addEventListener("click", function() {
 
 Italien.addEventListener("click", function() {
   if (italy.style.display == 'none') {
+    france.style.display = 'none';
+    ukrain.style.display = 'none';
     italy.style.display = 'block';
   } else {
     italy.style.display = 'none';
@@ -30,6 +34,8 @@ Italien.addEventListener("click", function() {
 
 Ukraina.addEventListener("click", function() {
   if (ukrain.style.display == 'none') {
+    france.style.display = 'none';
+    italy.style.display = 'none';
     ukrain.style.display = 'block';
   } else {
     ukrain.style.display = 'none';
