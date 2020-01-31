@@ -11,6 +11,10 @@ body {
     width: 700px;
 }
 
+body .flags {
+  background-image: url(img/svflag.svg);
+}
+
 .duck {
   width: 128px;
   height: 128px;
