@@ -45,7 +45,10 @@ Here are the slideshows.
     * [ASP.NET Core](s07-02-asp_dotnet_core)
 * [S08: Web application performance](s08-01-performance)
 
+<<<<<<< HEAD
 >>>>>>> 72c2be7414dc34405e643b310142186af502189f
+=======
+>>>>>>> 4e5318d036a17cb22ea6f20af1bd723a42912aba
 
 
 ```
