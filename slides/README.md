@@ -37,6 +37,13 @@ Here are the slideshows.
 =======
 * [S03: JavaScript Core](s03-01-JavaScript_core)
 * [S04: Node.js](s04-01-Nodejs)
+* S06: JavaScript and PHP frameworks
+    * [PHP frameworks](s06-01-PHP_frameworks)
+    * [JavaScript frameworks](s06-02-JavaScript_frameworks)
+* S07: ASP.NET and Model View Controller (MVC)
+    * [.NET Core](s07-01-dotnet_core)
+    * [ASP.NET Core](s07-02-asp_dotnet_core)
+* [S08: Web application performance](s08-01-performance)
 
 >>>>>>> 72c2be7414dc34405e643b310142186af502189f
 
