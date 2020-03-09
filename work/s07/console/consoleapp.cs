@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace menu {
 
@@ -35,12 +36,24 @@ namespace menu {
         }
       }
 
-      private static void ViewAccounts() {
+      private static bool ViewAccounts() {
+      
+      try {
 
+        String st = File.ReadAllText("../data/account.json");
+        Console.WriteLine(st);
+
+      } catch {
+        Console.WriteLine("JSON could not be read");
+        Console.WriteLine("e.Message");
+      }
+      return true;
       }
 
       private static void AccountNumber() {
 
       }
+
+  
   }
 }
