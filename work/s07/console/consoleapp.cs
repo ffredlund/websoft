@@ -1,5 +1,8 @@
 using System;
 using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Collections.Generic;
 
 namespace menu {
 
@@ -36,23 +39,82 @@ namespace menu {
         }
       }
 
-      private static bool ViewAccounts() {
-      
-      try {
+      private static void ViewAccounts() {
 
-        String st = File.ReadAllText("../data/account.json");
-        Console.WriteLine(st);
+        var accounts = ReadAccounts();
 
-      } catch {
-        Console.WriteLine("JSON could not be read");
-        Console.WriteLine("e.Message");
-      }
-      return true;
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("| Number | Balance | Label | Owner |");
+            Console.WriteLine("------------------------------------");
+        foreach (var account in accounts) 
+        {
+            if (account.Number == 42) 
+            {
+            Console.WriteLine("|   " + account.Number + "   |       " + account.Balance + "| " + account.Label + "| " + account.Owner + "    |"); 
+            Console.WriteLine("------------------------------------"); 
+            } else if (account.Label == "Savings") {
+            Console.WriteLine("| " + account.Number + " |       " + account.Balance + "|" + account.Label + "| " + account.Owner + "    |");
+            Console.WriteLine("------------------------------------");
+            } else {
+            Console.WriteLine("| " + account.Number + " |       " + account.Balance + "| " + account.Label + "| " + account.Owner + "    |");
+            Console.WriteLine("------------------------------------");
+            }
+
+
+        }
+        Console.ReadLine();
       }
 
       private static void AccountNumber() {
 
+        Console.WriteLine("Enter an Owner ID: ");
+        var id = Console.ReadLine();
+
+        var accounts = ReadAccounts();
+
+        foreach (var account in accounts) {
+          if (account.Owner == Convert.ToInt32(id)) {
+            Console.WriteLine("Account number: " + account.Number);
+            Console.WriteLine("Balance: " + account.Balance);
+            Console.WriteLine("Label: " + account.Label);
+            Console.WriteLine("Owner: " + account.Owner);             
+          }
+        }
+        Console.ReadLine();
+        
       }
+      public class Account
+    {
+        public int Number { get; set; }
+        public int Balance { get; set; }
+        public string Label { get; set; }
+        public int Owner { get; set; }
+        
+        public override string ToString() {
+            return JsonSerializer.Serialize<Account>(this);
+        }
+    }
+       static IEnumerable<Account> ReadAccounts()
+        {
+            String file = "../data/account.json";
+
+            using (StreamReader r = new StreamReader(file))
+            {
+                string data = r.ReadToEnd();
+                //Console.WriteLine(data);
+
+                var json = JsonSerializer.Deserialize<Account[]>(
+                    data,
+                    new JsonSerializerOptions {
+                        PropertyNameCaseInsensitive = true
+                    }
+                );
+
+                //Console.WriteLine(json[0]);
+                return json;
+            }
+        }
+
 
   
   }
