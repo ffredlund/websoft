@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,11 @@ namespace webapp.Services
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.ContentRootPath, "..", "data", "account.json"); }
+        }
+
+        internal object GetAccount()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Account> GetAccounts()

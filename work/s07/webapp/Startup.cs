@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using webapp.Models;
+using webapp.Services;
 
 namespace webapp
 {
@@ -24,6 +27,8 @@ namespace webapp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddTransient<JsonFileAccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,11 +41,8 @@ namespace webapp
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -50,6 +52,18 @@ namespace webapp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                // endpoints.MapGet("/accounts", (context) => {
+                //     var accounts = app.ApplicationServices.GetService<JsonFileAccountService>().GetAccounts();
+                //     var json = JsonSerializer.Serialize<IEnumerable<Account>>(accounts);
+                //     return context.Response.WriteAsync(json);
+                // });
+                // endpoints.MapGet("/account/{@account.Number}", (context) => {
+                //     var account = app.ApplicationServices.GetService<JsonFileAccountService>().GetAccount();
+                //     var json = JsonSerializer.Serialize<Account>(account);
+
+                //     return context.Response.WriteAsync(json);
+                // });
+                endpoints.MapControllers();
             });
         }
     }
